@@ -1,0 +1,43 @@
+<p>Order history</p>
+
+<h2>Order history</h2>
+
+<div *ngIf="orders">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Address</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Total</th>
+        <th scope="col">Order status</th>
+        <th scope="col">Ordered products</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.address }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.comment }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.total }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.orderStatus }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Ingredients</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of order.products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.ingredients }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="finished == false">
+  <h2>Time to delivery: {{ minutes }}:{{ seconds }}</h2>
+
+  <app-order-current [order]="order"></app-order-current>
+</div>
+<div *ngIf="finished == true">
+  <h2>Orders are delivered.</h2>
+</div>
